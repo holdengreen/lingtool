@@ -1,4 +1,5 @@
 import nltk
+from argostranslate import package, translate
 
 sentence = "At eight o'clock on Thursday morning Arthur didn't feel very good."
 tokens = nltk.word_tokenize(sentence)
@@ -54,3 +55,19 @@ for token in doc:
 out = []
 for token in doc:
     out.append(token.text)
+
+
+from argostranslate import package, translate
+
+installed_languages = translate.load_installed_languages()
+_t1 = None
+_t2 = None
+for lang in installed_languages:
+    if lang.name == "Spanish":
+        _t1 = lang
+    if lang.name == "English":
+        _t2 = lang
+
+t = _t1.get_translation(_t2)
+print(t.translate("Hola Mundo"))
+

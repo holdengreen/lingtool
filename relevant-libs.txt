@@ -1,0 +1,9 @@
+Python:
+- argostranslate
+- thulac
+- nltk
+- spaCy
+- jieba
+
+
+Torch
