@@ -35,3 +35,11 @@ for paragraph in excerpt:
 
 print(t.translate("Hola Mundo"))
 
+#import ebooklib
+#from ebooklib import epub
+
+book = "res/foreign/novels/Don_Quixote.txt"
+
+
+
+

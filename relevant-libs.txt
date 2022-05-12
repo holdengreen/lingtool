@@ -5,5 +5,8 @@ Python:
 - spaCy
 - jieba
 
+- PyPDF4
+- EbookLib
+
 
 Torch

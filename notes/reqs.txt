@@ -1,0 +1,2 @@
+this is run using Python v3.9.0
+other versions don't work

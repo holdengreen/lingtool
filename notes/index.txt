@@ -1,0 +1,5 @@
+--- lingtool notes ---
+
+
+note: add C source code reading
+note: package as Android app

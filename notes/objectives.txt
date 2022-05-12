@@ -1,0 +1,7 @@
+
+
+the tool should be able to table a book written in spanish,chinese encoded in txt,pdf,epub format and output one in one of those formats
+
+also it should be able to take a git repository with C source code in it, and output a book encoded in txt,pdf,epub
+
+alternatively the tool should output an opus encoded audiostream in place of an ebook

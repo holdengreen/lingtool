@@ -1,0 +1,8 @@
+
+to package lingtool including Python interpreter + machine learning libraries and models would be too large for an average mobile or web app
+
+so instead I may have a cloud library with features for downloading the stack or having the cloud service convert for you
+
+actually idk about that
+
+instead the app should target the web browser using modern apis such as storage and webasm
