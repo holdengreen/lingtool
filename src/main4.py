@@ -59,6 +59,7 @@ excerpt_  = [paragraph  for paragraph in excerpt.splitlines()]
 
 from argostranslate import package, translate
 import os
+import io
 from gtts import gTTS
 
 installed_languages = translate.load_installed_languages()
@@ -72,6 +73,10 @@ for lang in installed_languages:
 
 t = _t1.get_translation(_t2)
 #print(t.translate("Hola Mundo"))
+
+# now merge into single audio playback
+
+sfl = open("speech/stream.mp3", 'ab')
 
 i = 0
 for p in excerpt_:
@@ -88,10 +93,11 @@ for p in excerpt_:
 
     ''''''
     speech = gTTS(text=p, lang="es", slow=False)
-    speech.save("speech/"+str(i)+".mp3")
+    speech.write_to_fp(sfl)
     speech = gTTS(text=tr, lang="en", slow=False)
-    speech.save("speech/"+str(i+1)+".mp3")
+    speech.write_to_fp(sfl)
     ''''''
     
     i+=2
 
+sfl.close()
