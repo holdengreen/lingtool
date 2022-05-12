@@ -1,0 +1,60 @@
+from argostranslate import package, translate
+import os, sys, io
+from os.path import exists
+from gtts import gTTS
+
+installed_languages = translate.load_installed_languages()
+_t1 = None
+_t2 = None
+for lang in installed_languages:
+    if lang.name == "Spanish":
+        _t1 = lang
+    if lang.name == "English":
+        _t2 = lang
+
+t = _t1.get_translation(_t2)
+
+if len(sys.argv) < 2:
+    print("pass a path to a text file as an argument")
+    exit(0)
+
+_bookfl = open(sys.argv[1], 'r')
+book = _bookfl.read()
+_bookfl.close()
+
+outpath = "out/stream.mp3"
+if exists(outpath):
+    print("{} already exists".format(outpath))
+    exit(0)
+
+sfl = open(outpath, 'ab')
+
+paragraphs = [p for p in book.splitlines() if len(p)]
+
+numparagraphs = len(paragraphs)
+i = 0
+for p in paragraphs:
+    #if(not p): continue
+
+    print("paragraph {}/{}".format(str(int(i/2)), str(numparagraphs)))
+
+    tr = t.translate(p)
+
+    """
+    os.system('''espeak "{}" -ves -w speech/{}.wav'''.format(p, str(i)))
+    os.system('''espeak "{}" -ven -w speech/{}.wav'''.format(tr, str(i+1)))
+    """
+
+    ''''''
+    try:
+        speech = gTTS(text=p, lang="es", slow=False)
+        speech.write_to_fp(sfl)
+        speech = gTTS(text=tr, lang="en", slow=False)
+        speech.write_to_fp(sfl)
+    except:
+        pass
+    ''''''
+    
+    i+=2
+
+sfl.close()
