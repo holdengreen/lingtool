@@ -1,0 +1,16 @@
+per language speech rate scaling
+local mandarin speech
+local spanish american speech
+epub handling
+pdf handling
+whole book analysis
+specialized model(s)
+noun, verb, adjective set handling
+sets derived from book
+more assisted learning
+other media
+...
+dockerlike package
+browser ui
+android app
+mobile playback

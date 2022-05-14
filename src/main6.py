@@ -42,14 +42,14 @@ for p in paragraphs:
     tr = t.translate(p)
 
     a1 = subprocess.Popen(['espeak', p, '-v mb-es1', '--stdout'], stdout=subprocess.PIPE)
-    a2 = subprocess.Popen(["ffmpeg", "-i pipe:", "-vn", "-ar 44100", "-ac 2", "-b:a 192k", "-f mp3 pipe:"], stdin=a1.stdin=a1.stdout, stdout=subprocess.PIPE) #"ffmpeg -i pipe: -vn -ar 44100 -ac 2 -b:a 192k -f mp3 pipe:"
+    a2 = subprocess.Popen(["ffmpeg", "-i pipe:", "-vn", "-ar 44100", "-ac 2", "-b:a 192k", "-f mp3 pipe:"], stdin=a1.stdout, stdout=subprocess.PIPE) #"ffmpeg -i pipe: -vn -ar 44100 -ac 2 -b:a 192k -f mp3 pipe:"
 
     sfl.write(a2.stdout.read())
 
     #os.system('''espeak "{}" -ven -w speech/{}.wav'''.format(tr, str(i+1)))
 
     a1 = subprocess.Popen(['espeak', tr, '-v mb-us1', '--stdout'], stdout=subprocess.PIPE)
-    a2 = subprocess.Popen(["ffmpeg", "-i pipe:", "-vn", "-ar 44100", "-ac 2", "-b:a 192k", "-f mp3 pipe:"], stdin=a1.stdin=a1.stdout, stdout=subprocess.PIPE) #"ffmpeg -i pipe: -vn -ar 44100 -ac 2 -b:a 192k -f mp3 pipe:"
+    a2 = subprocess.Popen(["ffmpeg", "-i pipe:", "-vn", "-ar 44100", "-ac 2", "-b:a 192k", "-f mp3 pipe:"], stdin=a1.stdout, stdout=subprocess.PIPE) #"ffmpeg -i pipe: -vn -ar 44100 -ac 2 -b:a 192k -f mp3 pipe:"
 
     sfl.write(a2.stdout.read())
 
