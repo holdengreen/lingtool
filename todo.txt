@@ -8,9 +8,15 @@ specialized model(s)
 noun, verb, adjective set handling
 sets derived from book
 more assisted learning
-other media
+other media,
+from audio, to native lang(english), to parralel speech
 ...
 dockerlike package
 browser ui
 android app
 mobile playback
+---
+working medias:
+- https://odysee.com/@multipolarista:4/eeuu-no-es-una-democracia,-es-una:e
+- Karl Marx anime?
+- Kpop?
